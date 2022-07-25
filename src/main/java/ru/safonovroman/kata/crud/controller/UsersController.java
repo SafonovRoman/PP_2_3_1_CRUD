@@ -47,7 +47,6 @@ public class UsersController {
 	}
 
 	@PostMapping(value = "/user/{id}")
-	@Transactional
 	public String updateUser(ModelMap model,
 							 @PathVariable("id") Long id,
 							 @RequestParam("email") String email,

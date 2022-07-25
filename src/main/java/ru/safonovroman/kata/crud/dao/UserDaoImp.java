@@ -44,10 +44,6 @@ public class UserDaoImp implements UserDao {
    @Override
    @Transactional
    public void delete(Long id) {
-      try {
-         entityManager.remove(getUser(15L));
-      } catch (IllegalArgumentException e) {
-         entityManager.remove(getUser(id));
-      }
+      entityManager.remove(getUser(id));
    }
 }
