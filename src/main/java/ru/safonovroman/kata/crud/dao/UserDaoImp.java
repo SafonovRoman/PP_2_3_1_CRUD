@@ -16,9 +16,6 @@ public class UserDaoImp implements UserDao {
    @PersistenceContext
    private EntityManager entityManager;
 
-//   @Autowired
-//   private TransactionManager transactionManager;
-
    @Override
    @Transactional
    public void add(User user) {
@@ -38,7 +35,7 @@ public class UserDaoImp implements UserDao {
    @Override
    @Transactional
    public void update(User user) {
-      entityManager.persist(user);
+      entityManager.merge(user);
    }
 
    @Override
