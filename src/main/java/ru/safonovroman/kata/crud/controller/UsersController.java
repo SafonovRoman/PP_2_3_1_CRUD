@@ -59,7 +59,6 @@ public class UsersController {
 		user.setLastName(lastName);
 		userService.update(user);
 		model.addAttribute("user", user);
-		model.addAttribute("add", true);
 		return "user";
 	}
 
