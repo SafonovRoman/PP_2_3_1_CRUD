@@ -28,8 +28,7 @@ public class UsersController {
     }
 
     @PostMapping(value = "/users/new")
-    public RedirectView createUser(ModelMap model,
-								   @ModelAttribute("user") User user) {
+    public RedirectView createUser(ModelMap model, @ModelAttribute("user") User user) {
         userService.add(user);
         return new RedirectView("/users");
     }
@@ -41,11 +40,7 @@ public class UsersController {
     }
 
     @PostMapping(value = "/user/{id}")
-    public String updateUser(ModelMap model,
-                             @PathVariable("id") Long id,
-                             @RequestParam("email") String email,
-                             @RequestParam("firstName") String firstName,
-                             @RequestParam("lastName") String lastName) {
+    public String updateUser(ModelMap model, @PathVariable("id") Long id, @RequestParam("email") String email, @RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName) {
         User user = userService.getUser(id);
         user.setEmail(email);
         user.setFirstName(firstName);
