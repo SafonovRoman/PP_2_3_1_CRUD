@@ -14,8 +14,7 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
         encodingFilter.setForceEncoding(true);
         encodingFilter.setEncoding("UTF-8");
 
-        return new Filter[]{new CharacterSetFilter(),
-                encodingFilter};
+        return new Filter[]{encodingFilter};
     }
     @Override
     protected Class<?>[] getRootConfigClasses() {
